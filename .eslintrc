@@ -1,0 +1,45 @@
+{
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true,
+    "jasmine": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:react/jsx-runtime"
+  ],
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "parser": "babel-eslint",
+  "rules": {
+    "semi": 2,
+    "curly": 0,
+    "eqeqeq": 2,
+    "spaced-comment": 2,
+    "eol-last": 2,
+    "space-infix-ops": 2,
+    "newline-before-return": 2,
+    "linebreak-style": 0,
+    "camelcase": [
+      2,
+      {
+        "properties": "never"
+      }
+    ],
+    "quotes": [
+      2,
+      "single",
+      {
+        "allowTemplateLiterals": true,
+        "avoidEscape": true
+      }
+    ],
+    "react/jsx-uses-react": "error",
+    "react/jsx-uses-vars": "error"
+  }
+}

@@ -1,0 +1,111 @@
+{
+  "name": "audiovisuales",
+  "version": "1.0.0",
+  "description": "MySQL, Express, React, Audiovisuales app",
+  "scripts": {
+    "start": "nodemon --watch ./server --exec babel-node server/app.js",
+    "start:prod": "npm run server:prod && node build/app.js",
+    "clean": "rimraf node_modules && rimraf dist && rimraf build && npm install",
+    "webpack:dev": "cross-env NODE_ENV=development webpack --config ./webpack/webpack.config.dev.js",
+    "webpack:prod": "cross-env NODE_ENV=production webpack --config ./webpack/webpack.config.prod.js",
+    "server:prod": "rimraf build && babel server -d build",
+    "build": "rimraf dist && npm run webpack:dev && npm run start",
+    "build:prod": "rimraf dist && npm run webpack:prod && npm run start:prod",
+    "lint": "eslint client server",
+    "format": "prettier --trailing-comma es5 --single-quote --write ./**/*.{js,jsx,ts,tsx,json,css,scss}",
+    "format:check": "prettier --check ./**/*.{js,jsx,ts,tsx,json,css,scss}"
+  },
+  "keywords": [
+    "node",
+    "es6",
+    "express",
+    "react",
+    "react-router",
+    "webpack"
+  ],
+  "author": "Licem",
+  "license": "MIT",
+  "dependencies": {
+    "@babel/runtime": "^7.19.4",
+    "@date-io/date-fns": "^1.3.13",
+    "@hapi/joi": "^17.1.1",
+    "@material-ui/core": "^4.11.3",
+    "@material-ui/icons": "^4.11.2",
+    "@material-ui/lab": "^4.0.0-alpha.61",
+    "@material-ui/pickers": "^3.3.10",
+    "@pmmmwh/react-refresh-webpack-plugin": "^0.5.8",
+    "axios": "^0.21.1",
+    "bcrypt": "^5.0.1",
+    "classnames": "^2.3.1",
+    "cors": "^2.8.5",
+    "css-loader": "^5.2.7",
+    "date-fns": "^2.29.3",
+    "devextreme": "22.1.6",
+    "devextreme-react": "22.1.6",
+    "dotenv": "^8.2.0",
+    "express": "^5.0.0-alpha.7",
+    "formik": "^2.2.9",
+    "history": "^4.10.1",
+    "http-status-codes": "^2.1.4",
+    "immer": "^9.0.15",
+    "joi": "^17.6.4",
+    "jsonwebtoken": "^8.5.1",
+    "jwt-decode": "^3.1.2",
+    "material-ui-phone-number": "^3.0.0",
+    "moment": "^2.29.4",
+    "mysql2": "^2.3.3",
+    "nodemailer": "^6.8.0",
+    "path": "^0.12.7",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-refresh": "^0.14.0",
+    "react-router-dom": "^5.2.0",
+    "style-loader": "^2.0.0",
+    "sweetalert2": "^11.6.10",
+    "uuid": "^9.0.0",
+    "xlsx": "^0.18.5",
+    "yup": "^0.32.11",
+    "zustand": "^4.1.2"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.13.14",
+    "@babel/core": "^7.13.14",
+    "@babel/node": "^7.13.13",
+    "@babel/plugin-proposal-class-properties": "^7.13.0",
+    "@babel/plugin-proposal-function-bind": "^7.12.13",
+    "@babel/plugin-transform-runtime": "^7.19.1",
+    "@babel/preset-env": "^7.13.12",
+    "@babel/preset-react": "^7.13.13",
+    "babel-eslint": "^10.0.3",
+    "babel-loader": "^8.2.5",
+    "cross-env": "^7.0.3",
+    "dotenv-webpack": "^1.8.0",
+    "eslint": "^7.23.0",
+    "eslint-plugin-react": "^7.23.1",
+    "husky": "^4.3.8",
+    "lint-staged": "^10.5.4",
+    "nodemon": "^2.0.20",
+    "prettier": "^2.2.1",
+    "rimraf": "^3.0.0",
+    "url-loader": "^4.1.1",
+    "webpack": "^4.46.0",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-middleware": "^3.7.3",
+    "webpack-dev-server": "^3.11.2",
+    "webpack-hot-middleware": "^2.25.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged && npm run lint"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,json,css,scss}": [
+      "prettier --write"
+    ]
+  },
+  "engines": {
+    "node": ">= 12",
+    "npm": ">= 3.10.8"
+  }
+}

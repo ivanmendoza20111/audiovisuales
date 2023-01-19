@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./",
+    "allowSyntheticDefaultImports": false,
+    "paths": {
+      "@/*": ["client/*"]
+    }
+  },
+  "exclude": ["node_modules", "dist"]
+}

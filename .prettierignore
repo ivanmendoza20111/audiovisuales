@@ -1,0 +1,7 @@
+**/*.md
+**/*.svg
+package.json
+package-lock.json
+
+dist
+logs
